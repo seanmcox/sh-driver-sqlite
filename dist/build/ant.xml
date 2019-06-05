@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="jar" name="SH: Driver, SQLite">
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/../../.."/>
+    <property name="dir.project" value="${dir.buildfile}/../.."/>
+
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="jar">
+        <jar destfile="../install/sh.driver.sqlite.jar">
+            <manifest>
+                <attribute name="Bundle-Name" value="SH: Driver, SQLite"/>
+                <attribute name="Bundle-Description" value="A bundle that registers an implementation of the Super Helpful Quiz Driver."/>
+                <attribute name="Bundle-Vendor" value="The Shtick"/>
+                <attribute name="Bundle-Version" value="0.1.0"/>
+                <attribute name="Bundle-Activator" value="com.shtick.apps.sh.driver.sqlite.bundle.DriverActivator"/>
+                <attribute name="Import-Package" value="org.osgi.framework,com.shtick.apps.sh.core,com.shtick.apps.sh.core.content,org.sqlite,com.shtick.util.tokenizers,com.shtick.util.tokenizers.json,com.shtick.utils.data.json"/>
+            </manifest>
+            <fileset dir="../../bin"/>
+        </jar>
+    </target>
+
+    <target name="jar_and_bundle" depends="jar">
+        <copy file="../install/sh.driver.sqlite.jar" todir="${dir.workspace}/sh-main/dist/install/bundle"/>
+        <copy file="../install/LICENSE.sqlite-jdbc.txt" todir="${dir.workspace}/sh-main/dist/install"/>
+        <copy file="../install/sqlite-jdbc-3.16.1.jar" todir="${dir.workspace}/sh-main/dist/install/bundle"/>
+    </target>
+</project>

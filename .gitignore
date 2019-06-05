@@ -1,0 +1,7 @@
+/bin
+**/.DS_Store
+/dist/*.zip
+/dist/install/bundle
+/dist/install/felix-cache
+/dist/install/sh.*.jar
+/dist/install/LICENSE
