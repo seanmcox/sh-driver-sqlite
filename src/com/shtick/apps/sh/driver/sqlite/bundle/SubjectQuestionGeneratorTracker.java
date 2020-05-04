@@ -98,8 +98,11 @@ public class SubjectQuestionGeneratorTracker implements ServiceListener{
 		if(!(service instanceof SubjectQuestionGenerator))
 			return;
 		SubjectQuestionGenerator subjectQuestionGenerator=(SubjectQuestionGenerator)service;
-		if(!subjectQuestionGenerators.containsKey(subjectQuestionGenerator.getSubject()))
-			subjectQuestionGenerators.put(subjectQuestionGenerator.getSubject(),(ServiceReference<SubjectQuestionGenerator>)ref);
+		Subject subjectName = subjectQuestionGenerator.getSubject();
+		if(!subjectQuestionGenerators.containsKey(subjectName))
+			subjectQuestionGenerators.put(subjectName,(ServiceReference<SubjectQuestionGenerator>)ref);
+		else
+			System.err.println("Attempted to register duplicate subject: "+subjectName);
 	}
 
 	/**

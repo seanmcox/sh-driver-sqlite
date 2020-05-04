@@ -143,7 +143,7 @@ public class SQLiteDriver implements Driver {
 		                   " time_asked    TEXT    NOT NULL," +
 		                   " time_answered TEXT    NOT NULL" +
 		                   ")");
-				connection.close();
+				statement.close();
 			}
 			catch(SQLException t){
 				throw new RuntimeException(t);
